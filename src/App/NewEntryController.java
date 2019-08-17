@@ -1,7 +1,6 @@
 package App;
 import Connectivity.ConnectionClass;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -30,7 +29,6 @@ public class NewEntryController implements Initializable {
     public TextArea textArea;
     public AnchorPane alertBox;
     public VBox newEntryBox;
-    private Stage window;
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -67,21 +65,7 @@ public class NewEntryController implements Initializable {
         System.out.println("onClick:Button@submitButton");
         Stage stage = (Stage)submitButton.getScene().getWindow();
         stage.close();
+        System.out.println("NewEntry Window closed with submit button");
     }
 
-  /*  public void closeProgram(Stage stage){
-        stage.close();
-    }
-
-    public void OnClick_alertButtons(ActionEvent event){
-        window = (Stage) newEntryBox.getScene().getWindow();
-        if(event.equals(alertYes)){
-            closeProgram((Stage)alertYes.getScene().getWindow());
-            window.close();
-        }
-        if(event.equals(alertNo)){
-            closeProgram((Stage)alertYes.getScene().getWindow());
-        }
-
-    }*/
 }
