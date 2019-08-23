@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -23,7 +24,7 @@ public class Controller {
 
 
     @FXML
-    VBox entriesLIst;
+    VBox entriesList;
 
     @FXML
     public void initialize(){
@@ -34,7 +35,7 @@ public class Controller {
             Statement statement = conn.createStatement();
             ResultSet list = statement.executeQuery("SELECT * FROM timeline WHERE user='Kiran';" );
             while (list.next()){
-                entriesLIst.getChildren().add(new FeedBox(list.getString("date"),list.getString("time"),list.getString("text")));
+                entriesList.getChildren().add(new FeedBox(list.getString("date"),list.getString("time"),list.getString("text")));
             }
             statement.close();
             conn.close();
@@ -63,6 +64,10 @@ public class Controller {
         System.out.println("onClick:Button@newEntryButton");
     }
 
+    @FXML
+    public void OnClickEntry(ActiveEvent event){
+
+    }
 
 
 }

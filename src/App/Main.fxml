@@ -64,7 +64,7 @@
 <!--                        </ListView>-->
 <!--                     </content>-->
                      <content>
-                        <VBox fx:id="entriesLIst" />
+                        <VBox fx:id="entriesList" />
                      </content>
                   </ScrollPane>
                </content></Tab>
