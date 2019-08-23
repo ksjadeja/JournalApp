@@ -6,10 +6,10 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox prefHeight="600.0" prefWidth="720" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.Controller">
@@ -57,17 +57,25 @@
         <tabs>
           <Tab text="Timeline">
                <content>
-                  <VBox fx:id="feedVBox" alignment="CENTER" prefHeight="550.0" prefWidth="720.0" />
-               </content>
-          </Tab>
+                  <ScrollPane prefHeight="550.0" prefWidth="720.0">
+<!--                     <content>-->
+<!--                        <ListView fx:id="entriesList">-->
+
+<!--                        </ListView>-->
+<!--                     </content>-->
+                     <content>
+                        <VBox fx:id="entriesLIst" />
+                     </content>
+                  </ScrollPane>
+               </content></Tab>
           <Tab text="Calender">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <ScrollPane prefHeight="550.0" prefWidth="720.0" />
             </content>
           </Tab>
             <Tab text="Filters">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <ScrollPane prefHeight="550.0" prefWidth="720.0" />
               </content>
             </Tab>
         </tabs>
