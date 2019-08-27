@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_16.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/JavaFX__11_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48_bin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JournalApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JournalApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Journal_app_DB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Journal_app_DB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JournalApp/App/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JournalApp/App/Main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JournalApp/META-INF/JournalApp.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Connectivity/ConnectionClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Connectivity/ConnectionClass.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -122,7 +109,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
+            <state relative-caret-position="316">
               <caret line="87" column="56" selection-start-line="87" selection-start-column="56" selection-end-line="87" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -274,7 +261,36 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Journal-App2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Journal-App2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Journal-App2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Journal-App2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Journal-App2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Journal-App2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Journal-App2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -426,12 +442,12 @@
       <workItem from="1566533621867" duration="491000" />
       <workItem from="1566535368148" duration="9128000" />
       <workItem from="1566891584831" duration="335000" />
-      <workItem from="1566894466181" duration="1106000" />
+      <workItem from="1566894466181" duration="1886000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77897000" />
+    <option name="totallyTimeSpent" value="78677000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -444,9 +460,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.20188425" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2016129" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32954547" />
       <window_info id="Designer" order="3" />
@@ -455,7 +470,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2681883" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2681883" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39942938" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -712,7 +727,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state relative-caret-position="316">
           <caret line="87" column="56" selection-start-line="87" selection-start-column="56" selection-end-line="87" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
