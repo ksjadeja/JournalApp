@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `journal_app` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `journal_app`;
 -- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
 --
 -- Host: localhost    Database: journal_app
@@ -39,9 +41,13 @@ CREATE TABLE `timeline` (
 
 LOCK TABLES `timeline` WRITE;
 /*!40000 ALTER TABLE `timeline` DISABLE KEYS */;
-INSERT INTO `timeline` VALUES (1,'Kiran','2019-08-12','02:30:00','It\'s First Entry!!!'),(2,'Kiran','2019-08-13','03:57:38','Second post'),(3,'Kiran','2019-08-13','04:40:39','This is the third'),(4,'Kiran','2019-08-13','04:46:53','Fourth one');
+INSERT INTO `timeline` VALUES (1,'Kiran','2019-08-12','02:30:00','It\'s First Entry!!!'),(2,'Kiran','2019-08-13','03:57:38','Second post'),(3,'Kiran','2019-08-13','04:40:39','This is the third'),(4,'Kiran','2019-08-13','04:46:53','Fourth one'),(5,'Kiran','2019-08-18','02:18:37','This is fifth');
 /*!40000 ALTER TABLE `timeline` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'journal_app'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -52,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-17 21:48:47
+-- Dump completed on 2019-08-23 12:58:45

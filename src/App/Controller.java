@@ -5,7 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+import javafx.fxml.Initializable;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,14 +16,17 @@ import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.awt.*;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.YearMonth;
+import java.util.*;
 
 
 public class Controller {
@@ -34,27 +38,20 @@ public class Controller {
     @FXML
     VBox calendarVBox;
     int calendarCount;
+
     @FXML
-    void initialize(){
+    VBox entriesList;
+
+    @FXML
+    public void initialize(){
+
         try {
             ConnectionClass connectionClass = new ConnectionClass();
             Connection conn = connectionClass.getConnection();
             Statement statement = conn.createStatement();
             ResultSet list = statement.executeQuery("SELECT * FROM timeline WHERE user='Kiran';" );
-
-            while (list.next()) {
-                try {
-                    TextFlow textField;
-                    Text dateField,timeField;
-                    VBox element = FXMLLoader.load(getClass().getResource("FeedBox.fxml"));
-                    dateField=new Text(String.valueOf(list.getString("date")));
-                    timeField=new Text(String.valueOf(list.getString("time")));
-                    textField=new TextFlow(new Text(list.getString("text")));
-                    element.getChildren().addAll(dateField,timeField,textField);
-                    feedVBox.getChildren().add(element);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            while (list.next()){
+                entriesList.getChildren().add(new FeedBox(list.getString("date"),list.getString("time"),list.getString("text")));
             }
             statement.close();
             conn.close();
@@ -62,6 +59,8 @@ public class Controller {
             e.printStackTrace();
             System.out.println("SQLException");
         }
+
+
     }
 
     @FXML
@@ -81,6 +80,10 @@ public class Controller {
         System.out.println("onClick:Button@newEntryButton");
     }
 
+    @FXML
+    public void OnClickEntry(ActiveEvent event){
+
+    }
 
     public void loadCalendar(Event event) {
         calendarCount++;

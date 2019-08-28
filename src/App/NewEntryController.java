@@ -2,7 +2,6 @@ package App;
 import Connectivity.ConnectionClass;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
@@ -10,16 +9,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ResourceBundle;
 
-public class NewEntryController implements Initializable {
+public class NewEntryController {
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
@@ -30,8 +27,7 @@ public class NewEntryController implements Initializable {
     public AnchorPane alertBox;
     public VBox newEntryBox;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources){
+    public void initialize(){
         dateText.setText(LocalDate.now().toString());
         timeText.setText(formatter.format(LocalTime.now()));
         submitButton.setDisable(true);
