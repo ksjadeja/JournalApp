@@ -58,7 +58,8 @@ public class FeedBox extends Region {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("EditEntryDialog.fxml"));
                 editEntryWindow.getDialogPane().setContent(loader.load());
-
+                EditEntryController editEntryController = loader.getController();
+                editEntryController.setId(id);
                 editEntryWindow.getDialogPane().getButtonTypes().add(ButtonType.OK);
                 editEntryWindow.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
                 editEntryWindow.show();
@@ -94,6 +95,10 @@ public class FeedBox extends Region {
 
     public String getTextField() {
         return textField.getText();
+    }
+
+    public String get_id(){
+        return id;
     }
 
     public String toString(){
