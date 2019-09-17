@@ -1,15 +1,11 @@
 package App;
 
 
-import com.sun.javafx.scene.control.skin.FXVK;
-import javafx.event.Event;
-import javafx.event.EventHandler;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.ParallelCamera;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
@@ -20,15 +16,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-import javafx.stage.Stage;
-import jdk.jshell.EvalException;
 
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
+import java.util.Optional;
 
 
-public class FeedBox extends Region {
+public class FeedBox extends Region{
 
     private String id;
     private VBox feedbox;
@@ -51,24 +46,7 @@ public class FeedBox extends Region {
         textField.setEditable(false);
         editEntry.setVisible(false);
 
-        editEntry.addEventHandler(MouseEvent.MOUSE_CLICKED,e -> {
-            try {
-                Dialog<ButtonType> editEntryWindow = new Dialog<>();
-                editEntryWindow.initOwner(feedbox.getScene().getWindow());
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("EditEntryDialog.fxml"));
-                editEntryWindow.getDialogPane().setContent(loader.load());
-                EditEntryController editEntryController = loader.getController();
-                editEntryController.setId(id);
-                editEntryWindow.getDialogPane().getButtonTypes().add(ButtonType.OK);
-                editEntryWindow.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
-                editEntryWindow.show();
-
-            }catch (IOException ex){
-                ex.printStackTrace();
-            }
-
-        });
+        editEntry.addEventHandler(MouseEvent.MOUSE_CLICKED,e ->OnClick_editEntry());
 
         HBox header = new HBox(15,editEntry,dateField,timeField);
         header.setPadding(new Insets(5,15,5,10));
@@ -80,7 +58,7 @@ public class FeedBox extends Region {
         feedbox.setPrefSize(700,150);
         feedbox.addEventHandler(MouseEvent.MOUSE_ENTERED,e->setEditEntryVisibility(true));
         feedbox.addEventHandler(MouseEvent.MOUSE_EXITED,e->setEditEntryVisibility(false));
-
+        feedbox.setId(id);
 
         getChildren().add(feedbox);
     }
@@ -109,10 +87,31 @@ public class FeedBox extends Region {
         editEntry.setVisible(flag);
     }
 
-    /*public void onClick_editEntry(MouseEvent event){
-            public void handle(MouseEvent event){
+    public void OnClick_editEntry(){
+        try {
+            Dialog<ButtonType> editEntryWindow = new Dialog<>();
+            editEntryWindow.initOwner(feedbox.getScene().getWindow());
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/FXMLFiles/EditEntryDialog.fxml"));
+            editEntryWindow.getDialogPane().getButtonTypes().add(ButtonType.OK);
+            editEntryWindow.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+            EditEntryController editEntryController = new EditEntryController(this.id,editEntryWindow);
+            loader.setController(editEntryController);
+            editEntryWindow.getDialogPane().setContent(loader.load());
 
+            Optional<ButtonType> res = editEntryWindow.showAndWait();
+            if(res.isPresent() && res.get()==ButtonType.OK){
+                editEntryController.OnClick_OKButton(this);
+            }
+
+        }catch (IOException ex){
+            ex.printStackTrace();
         }
-    }*/
+    }
+
+    public void setTextField(String text){
+        textField.setText(text);
+    }
+
 
 }
